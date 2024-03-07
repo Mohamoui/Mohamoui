@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project 2</title>
+<style>
+  body {
+    background-color: #f0f0f0; /* Set background color */
+  }
+  figure {
+    margin: 20px; /* Add some margin for spacing */
+  }
+</style>
+</head>
+<body>
+
+<figure>
+  <img src="artwork-quality100.jpg" alt="Artwork Quality 100">
+  <figcaption>File Size: X KB</figcaption>
+</figure>
+
+<figure>
+  <img src="artwork-quality50.jpg" alt="Artwork Quality 50">
+  <figcaption>File Size: X KB</figcaption>
+</figure>
+
+<figure>
+  <img src="artwork-quality10.jpg" alt="Artwork Quality 10">
+  <figcaption>File Size: X KB</figcaption>
+</figure>
+
+<figure>
+  <img src="artwork-256colors.png" alt="Artwork 256 Colors">
+  <figcaption>File Size: X KB</figcaption>
+</figure>
+
+<figure>
+  <img src="artwork-128colors.png" alt="Artwork 128 Colors">
+  <figcaption>File Size: X KB</figcaption>
+</figure>
+
+<!-- Add more figures for other images -->
+
+</body>
+</html>
