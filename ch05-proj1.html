@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project 1</title>
+<link rel="stylesheet" href="ch05-proj1.css">
+</head>
+<body>
+
+<section>
+  <h2>Order Table</h2>
+  <table>
+    <caption>Order Details</caption>
+    <thead>
+      <tr>
+        <th>Order ID</th>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>001</td>
+        <td>Product A</td>
+        <td>5</td>
+        <td><span class="status status-pending">Pending</span></td>
+      </tr>
+      <tr>
+        <td>002</td>
+        <td>Product B</td>
+        <td>3</td>
+        <td><span class="status status-shipped">Shipped</span></td>
+      </tr>
+      <!-- Add more rows as needed -->
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Order Form</h2>
+  <form action="https://www.randyconnolly.com/tests/process.php" method="GET">
+    <fieldset>
+      <legend>Order Details</legend>
+      <label for="product">Product:</label>
+      <input type="text" id="product" name="product" required><br>
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" name="quantity" required><br>
+      <label for="status">Status:</label>
+      <select id="status" name="status" required>
+        <option value="pending">Pending</option>
+        <option value="shipped">Shipped</option>
+        <option value="delivered">Delivered</option>
+      </select><br>
+      <button type="submit">Submit</button>
+    </fieldset>
+  </form>
+</section>
+
+</body>
+</html>
