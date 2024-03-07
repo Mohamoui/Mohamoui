@@ -1,0 +1,47 @@
+/* Step 3: Set margins for body */
+body {
+  margin-top: 0em;
+  margin-bottom: 0em;
+  margin-left: 4em;
+  margin-right: 4em;
+}
+
+/* Step 4: Define font styles */
+h1, blockquote {
+  font-family: 'Roboto Slab', serif;
+  font-size: 2rem;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9rem;
+}
+
+/* Step 6: Style links */
+a {
+  color: #3366cc;
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: #a9abaa;
+  color: #92042f;
+}
+
+.external-link {
+  border: 1px solid #3366cc;
+  border-radius: 5px;
+  padding: 3px 8px;
+}
+
+/* Step 8: Set width for images */
+img {
+  width: 100%;
+}
+
+/* Additional styles */
+blockquote {
+  text-align: center;
+  padding: 10px;
+  margin: 10px 0;
+}
