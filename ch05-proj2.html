@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project 2</title>
+<link rel="stylesheet" href="ch05-proj2.css">
+</head>
+<body>
+
+<section class="form-section">
+  <h2>Search Paintings</h2>
+  <form action="https://www.randyconnolly.com/tests/process.php" method="GET">
+    <label for="search">Search:</label>
+    <input type="text" id="search" name="search" placeholder="Enter keyword...">
+    <fieldset>
+      <legend>Genre</legend>
+      <label><input type="radio" name="genre" value="0" checked> Baroque</label><br>
+      <label><input type="radio" name="genre" value="1"> Renaissance</label><br>
+      <label><input type="radio" name="genre" value="2"> Realism</label><br>
+    </fieldset>
+    <label for="bulk-actions">Bulk Actions:</label>
+    <select id="bulk-actions" name="bulk-actions">
+      <option value="0">Archive</option>
+      <option value="1">Edit</option>
+      <option value="2">Delete</option>
+      <option value="3">Collection</option>
+    </select>
+    <button type="submit">Apply</button>
+  </form>
+</section>
+
+<section class="table-section">
+  <h2>Paintings</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Title</th>
+        <th>Artist</th>
+        <th>Year</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><img src="painting1.jpg" alt="Painting 1"></td>
+        <td>Painting 1</td>
+        <td>Artist 1</td>
+        <td>2020</td>
+        <td><button type="button"><img src="edit-icon.png" alt="Edit"></button></td>
+      </tr>
+      <!-- Add more rows as needed -->
+    </tbody>
+  </table>
+</section>
+
+</body>
+</html>
