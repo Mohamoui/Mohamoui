@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project 3</title>
+<link rel="stylesheet" href="ch05-proj3.css">
+</head>
+<body>
+
+<section>
+  <h2>Order Form</h2>
+  <form action="https://www.randyconnolly.com/tests/process.php" method="GET">
+    <table>
+      <tr>
+        <td><label for="product">Product:</label></td>
+        <td><input type="text" id="product" name="product"></td>
+      </tr>
+      <tr>
+        <td><label for="quantity">Quantity:</label></td>
+        <td><input type="number" id="quantity" name="quantity"></td>
+      </tr>
+      <tr>
+        <td><label for="status">Status:</label></td>
+        <td>
+          <select id="status" name="status">
+            <option value="pending">Pending</option>
+            <option value="shipped">Shipped</option>
+            <option value="delivered">Delivered</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td><label>Options:</label></td>
+        <td>
+          <label><input type="checkbox" name="options[]" value="option1"> Option 1</label><br>
+          <label><input type="checkbox" name="options[]" value="option2"> Option 2</label><br>
+          <label><input type="checkbox" name="options[]" value="option3"> Option 3</label><br>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button type="submit">Submit</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</section>
+
+</body>
+</html>
