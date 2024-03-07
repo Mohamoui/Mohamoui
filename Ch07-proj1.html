@@ -1,0 +1,73 @@
+/* Step 2: Flex layout for header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Step 3: Adjust card width */
+.card {
+  width: 24%;
+}
+
+/* Step 4: Flexbox mode for container */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Step 5: Flexbox mode for cards */
+.cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Step 6: Set max-width for card images */
+.card img {
+  max-width: 100%;
+}
+
+/* Step 7: Hover effects */
+.card:hover img {
+  filter: saturate(150%);
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card button {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.card:hover button {
+  opacity: 1;
+}
+
+/* Step 8: Media queries */
+@media screen and (max-width: 480px) {
+  /* For mobile-sized screens */
+  .card {
+    width: 100%;
+  }
+
+  :root {
+    --card-font-size: 100%;
+    --header-font-size: 24px;
+    --header-height: 4em;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  /* For tablet-sized screens */
+  .card {
+    width: 45%;
+  }
+
+  :root {
+    --card-font-size: 100%;
+    --header-height: 5em;
+  }
+}
