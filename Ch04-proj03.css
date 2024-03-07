@@ -1,0 +1,65 @@
+/* Step 3: Styles for header */
+header {
+  background-image: url('hero-image.jpg'); /* Replace 'hero-image.jpg' with the path to your hero image */
+  background-size: cover;
+  width: 100%;
+  min-height: 500px;
+}
+
+/* Step 4: Styles for navigation */
+nav {
+  background-image: url('logo.png'); /* Replace 'logo.png' with the path to your logo image */
+  background-size: 60px;
+  padding: 20px;
+  height: 100px; /* Adjust height as needed */
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #ffcc00;
+}
+
+/* Step 6: Styles for div within header */
+.header-content {
+  margin-top: 200px; /* Adjust margin-top to position div vertically */
+  margin-left: 40px; /* Adjust margin-left to align with navigation */
+}
+
+/* Step 7: Styles for card divs */
+.card {
+  display: inline-block;
+  width: 30%; /* Adjust width as needed */
+  margin-right: 20px; /* Adjust margin between cards */
+  vertical-align: top;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+/* Step 8: Styles for heart and comment spans */
+.card span {
+  background-repeat: no-repeat;
+  background-size: 24px;
+  padding-left: 30px; /* Adjust padding-left to position icon */
+  margin-right: 10px; /* Adjust margin-right to separate icon from text */
+}
+
+.heart {
+  background-image: url('heart-icon.png'); /* Replace 'heart-icon.png' with the path to your heart icon image */
+}
+
+.comment {
+  background-image: url('comment-icon.png'); /* Replace 'comment-icon.png' with the path to your comment icon image */
+}
