@@ -1,0 +1,55 @@
+/* Form styles */
+.form-section {
+  margin-bottom: 20px;
+}
+
+form {
+  width: 50%;
+}
+
+fieldset {
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+legend {
+  font-weight: bold;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  padding: 10px;
+  background-color: #3366cc;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Table styles */
+.table-section table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-section th, .table-section td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+.table-section th {
+  background-color: #f2f2f2;
+}
+
+.table-section img {
+  width: 50px;
+  height: auto;
+}
