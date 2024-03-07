@@ -1,0 +1,47 @@
+/* Step 3: Add padding to body and set width of section */
+body {
+  padding: 40px;
+}
+
+section {
+  width: 910px;
+}
+
+/* Step 4: Set display property for column divs */
+.column {
+  display: inline-block;
+  width: 30%; /* Adjust width as needed */
+  margin-right: 20px; /* Adjust margin between columns */
+}
+
+/* Step 5: Style list items */
+.column ul {
+  list-style-type: none;
+}
+
+.column li:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.1); /* Darken the background color */
+}
+
+/* Step 6: Style link formatting */
+a {
+  text-decoration: none;
+  color: #3366cc;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+a:hover {
+  background-color: #3366cc;
+  color: #fff;
+}
+
+/* Step 7: Style confidence div */
+.confidence li {
+  background-image: url('checkmark.svg');
+  background-size: 24px;
+  background-repeat: no-repeat;
+  padding-left: 30px; /* Adjust padding to avoid overlapping checkmark */
+  margin-bottom: 5px; /* Adjust margin between list items */
+}
