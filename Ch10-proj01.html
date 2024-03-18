@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Schemes</title>
+    <style>
+        /* Styling for loading animation */
+        .loading {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Color Schemes</h1>
+    <div class="loading">Loading...</div>
+    <section id="color-schemes"></section>
+    <aside>
+        <h2>Scheme Details</h2>
+        <fieldset></fieldset>
+    </aside>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const colorSchemesElement = document.getElementById('color-schemes');
+            const loadingElement = document.querySelector('.loading');
+            const schemeDetailsElement = document.querySelector('aside fieldset');
+
+            // Function to fetch data from the API
+            async function fetchData() {
+                try {
+                    // Display loading animation
+                    loadingElement.style.display = 'block';
+
+                    const response = await fetch('API_URL_HERE');
+                    const data = await response.json();
+                    return data;
+                } catch (error) {
+                    console.error('Error fetching data:', error);
+                } finally {
+                    // Hide loading animation
+                    loadingElement.style.display = 'none';
+                }
+            }
+
+            // Function to generate markup for a single color scheme
+            function generateSchemeMarkup(scheme) {
+                const article = document.createElement('article');
+                const h3 = document.createElement('h3');
+                h3.textContent = scheme.name;
+                const section = document.createElement('section');
+                section.textContent = scheme.description;
+                const div = document.createElement('div');
+                const button = document.createElement('button');
+                button.textContent = 'View';
+                button.dataset.id = scheme.id; // Storing scheme id as a data attribute
+                button.addEventListener('click', handleViewButtonClick);
+                div.append(button);
+                article.append(h3, section, div);
+                colorSchemesElement.appendChild(article);
+            }
+
+            // Function to handle click on View button
+            function handleViewButtonClick(event) {
+                const schemeId = event.target.dataset.id;
+                const scheme = schemes.find(s => s.id === schemeId);
+                if (scheme) {
+                    displaySchemeDetails(scheme);
+                }
+            }
+
+            // Function to display scheme details
+            function displaySchemeDetails(scheme) {
+                // Clear previous content
+                schemeDetailsElement.innerHTML = '';
+                const schemeName = document.createElement('h2');
+                schemeName.textContent = scheme.name;
+                const div = document.createElement('div');
+                div.textContent = scheme.details;
+                schemeDetailsElement.append(schemeName, div);
+            }
+
+            // Fetch data and generate markup
+            fetchData()
+                .then(data => {
+                    data.forEach(scheme => {
+                        generateSchemeMarkup(scheme);
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>
