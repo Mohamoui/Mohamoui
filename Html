@@ -1,0 +1,119 @@
+// MovieList.js
+import React from 'react';
+import SingleMovie from './SingleMovie';
+
+const MovieList = ({ movies }) => {
+  return (
+    <div>
+      {movies.map((movie, index) => (
+        <SingleMovie key={index} movie={movie} />
+      ))}
+    </div>
+  );
+};
+
+export default MovieList;
+
+// SingleMovie.js
+import React from 'react';
+import MovieLink from './MovieLink';
+
+const SingleMovie = ({ movie }) => {
+  const { title, year, director, tmdbID } = movie;
+
+  return (
+    <div className="card">
+      <div className="card-content">
+        <p className="title">{title}</p>
+        <p className="subtitle">{year}</p>
+        <p className="subtitle">{director}</p>
+      </div>
+      <footer className="card-footer">
+        <MovieLink tmdbID={tmdbID} />
+      </footer>
+    </div>
+  );
+};
+
+export default SingleMovie;
+
+// MovieLink.js
+import React from 'react';
+
+const MovieLink = ({ tmdbID }) => {
+  return (
+    <a className="button card-footer-item" href={`https://www.themoviedb.org/movie/${tmdbID}`}>
+      <img src="images/tmdb.svg" width="30" alt="TMDB Logo" />
+    </a>
+  );
+};
+
+export default MovieLink;
+
+
+
+// App.js
+import React, { useState } from 'react';
+import MovieList from './MovieList';
+import MovieForm from './MovieForm';
+import movieData from './movie-data';
+
+const App = () => {
+  const [movies, setMovies] = useState(movieData);
+
+  const saveChanges = (index, updatedMovie) => {
+    setMovies(prevMovies => {
+      const newMovies = [...prevMovies];
+      newMovies[index] = updatedMovie;
+      return newMovies;
+    });
+  };
+
+  return (
+    <div>
+      <h1>My Movie Collection</h1>
+      <MovieList movies={movies} />
+      {movies.map((movie, index) => (
+        <MovieForm key={index} index={index} movie={movie} saveChanges={saveChanges} />
+      ))}
+    </div>
+  );
+};
+
+export default App;
+
+
+// MovieForm.js
+import React, { useState } from 'react';
+
+const MovieForm = ({ index, movie, saveChanges }) => {
+  const [formData, setFormData] = useState({
+    title: movie.title,
+    year: movie.year,
+    director: movie.director,
+  });
+
+  const handleChange = e => {
+    const { name, value } = e.target;
+    setFormData(prevData => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    saveChanges(index, formData);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input type="text" name="title" value={formData.title} onChange={handleChange} />
+      <input type="text" name="year" value={formData.year} onChange={handleChange} />
+      <input type="text" name="director" value={formData.director} onChange={handleChange} />
+      <button type="submit">Save Changes</button>
+    </form>
+  );
+};
+
+export default MovieForm;
