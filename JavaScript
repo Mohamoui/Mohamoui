@@ -1,0 +1,27 @@
+// Function to find the indices of two numbers that sum up to the target
+// Approach: Use a hash table to store indices of elements we've seen so far
+// For each element, calculate its complement and check if it exists in the hash table
+// If it does, return the indices, otherwise add the current element's index to the hash table
+// Time complexity: O(n), where n is the number of elements in the array
+// Space complexity: O(n) for the hash table
+function twoSum(nums, target) {
+    // Create a hash table to store indices of elements
+    const hash = {};
+    
+    // Loop through the array
+    for (let i = 0; i < nums.length; i++) {
+        // Calculate the complement
+        const complement = target - nums[i];
+        
+        // If complement exists in hash table, return the indices
+        if (hash[complement] !== undefined) {
+            return [hash[complement], i];
+        }
+        
+        // Add current element's index to hash table
+        hash[nums[i]] = i;
+    }
+    
+    // If no solution found
+    return [];
+}
